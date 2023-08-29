@@ -3,10 +3,10 @@
 
 
 class Square:
-    """ ... """
+    """Class Square """
 
     def __init__(self, size=0):
-        """..."""
+        """Constructor of a Square with the size"""
     if size != int:
         raise(TypeError("size must be an integer"))
     elif (size < 0):
