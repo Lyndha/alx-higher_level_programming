@@ -6,6 +6,7 @@ defines a rectangle
 
 class Rectangle:
     """rectangle class"""
+
     def __init__(self, width=0, height=0):
         """instantiation"""
         self.__width = width
@@ -22,7 +23,7 @@ class Rectangle:
         self.__width = value
         try:
             assert type(self.__width) == int
-        except:
+        except BaseException:
             raise TypeError("width must be an integer")
         if self.__width < 0:
             raise ValueError("width must be >= 0")
@@ -38,10 +39,8 @@ class Rectangle:
         self.__height = value
         try:
             assert type(self.__height) == int
-        except:
+        except BaseException:
             raise ValueError("height must be >= 0")
-        if self.__width < 0:
-            raise ValueError("width must be >= 0")
 
     def area(self):
         """returns the area"""
