@@ -40,6 +40,8 @@ class Rectangle:
             assert type(self.__height) == int
         except:
             raise ValueError("height must be >= 0")
+        if self.__width < 0:
+            raise ValueError("width must be >= 0")
 
     def area(self):
         """returns the area"""
