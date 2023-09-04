@@ -7,10 +7,14 @@ defines a rectangle
 class Rectangle:
     """rectangle class"""
 
+    number_of_instances = 0
+    print_symbol = '#'
+
     def __init__(self, width=0, height=0):
         """instantiation"""
         self.__width = width
         self.__height = height
+        Rectangle.number_of_instances += 1
 
     @property
     def width(self):
@@ -58,8 +62,9 @@ class Rectangle:
             return ""
         for i in range(self.__height):
             for j in range(self.__width):
-                print("#", end="")
-            print()
+                print(self.print_symbol, end="")
+            if i != self.__height - 1:
+                print()
         return ""
 
     def __repr__(self):
@@ -69,4 +74,5 @@ class Rectangle:
 
     def __del__(self):
         """delete a rectangle"""
+        Rectangle.number_of_instances -= 1
         print("Bye rectangle...")

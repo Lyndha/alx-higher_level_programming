@@ -7,10 +7,14 @@ defines a rectangle
 class Rectangle:
     """rectangle class"""
 
+    number_of_instances = 0
+    print_symbol = "#"
+
     def __init__(self, width=0, height=0):
         """instantiation"""
         self.__width = width
         self.__height = height
+        Rectangle.number_of_instances += 1
 
     @property
     def width(self):
@@ -58,7 +62,7 @@ class Rectangle:
             return ""
         for i in range(self.__height):
             for j in range(self.__width):
-                print("#", end="")
+                print(Rectangle.print_symbol, end="")
             print()
         return ""
 
@@ -69,4 +73,16 @@ class Rectangle:
 
     def __del__(self):
         """delete a rectangle"""
+        Rectangle.number_of_instances -= 1
         print("Bye rectangle...")
+
+    @staticmethod
+    def bigger_or_equal(rect_1, rect_2):
+        """return biggest rectangle based on the area"""
+        if not isinstance(rect_1, Rectangle):
+            raise TypeError("rect_1 must be an instance of Rectangle")
+        if not isinstance(rect_2, Rectangle):
+            raise TypeError("rect_2 must be an instance of Rectangle")
+        if rect_1.area() >= rect_2.area():
+            return rect_1
+        return rect_2
