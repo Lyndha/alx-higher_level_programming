@@ -1,3 +1,3 @@
-a = [1, 3, 4]
-b = a[:]
-print b
+def copy_list(l):
+    a = l[:]
+    print a
