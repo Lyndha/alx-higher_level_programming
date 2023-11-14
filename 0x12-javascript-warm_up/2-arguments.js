@@ -1,6 +1,12 @@
 #!/usr/bin/node
 
-
-console.log(`Line 1
-Line 2
-line 3`);
+if (process.argv.length === 2) {
+	console.log('No arguement')
+}
+else if (process.argv.length === 3) {
+	console.log('Arguement found')
+}
+else 
+{
+	console.log('Arguements found')
+};
