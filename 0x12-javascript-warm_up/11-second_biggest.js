@@ -1,5 +1,5 @@
 #!/usr/bin/node
-/*Write a script that searches the second biggest integer in the list of arguments.
+/* Write a script that searches the second biggest integer in the list of arguments.
 
 You can assume all arguments can be converted to integer
 If no argument passed, print 0
