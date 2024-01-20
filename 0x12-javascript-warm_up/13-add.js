@@ -7,5 +7,5 @@ You are not allowed to use var
 */
 
 exports.add = function (a, b) {
-  console.log(a + b);
+  return (a + b);
 };
